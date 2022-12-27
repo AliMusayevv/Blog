@@ -1,0 +1,48 @@
+﻿@using  Blog.Models.EntityFrameWork
+@model List<ToDoList>
+
+@{
+    ViewBag.Title = "ToDoList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<a class="btn btn-primary btn1" href="/Home/AddNew">Add New </a>
+<table class="table table-bordered table-hover ">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Month</th>
+            <th>Day</th>
+            <th>Afder Wake Up</th>
+            <th>At University</th>
+            <th>At Lesson End</th>
+            <th>At Night</th>
+            <th>Not In Plan</th>
+            <th> Update</th>
+            <th>Delete</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var list in Model)
+        {
+            <tr>
+                <td>@list.ID</td>
+                <td>@list.MONTH</td>
+                <td>@list.DAY</td>
+                <td>@list.AFTER_WAKE_UP</td>
+                <td>@list.AT_UNIVERSITY</td>
+                <td>@list.AFTER_LESSON_END</td>
+                <td>@list.AT_NIGHT</td>
+                <td>@list.NOT_IN_PLAN</td>
+                <td><a class=" btn btn-primary btn-warning" href="/Home/Update/@list.ID"> Update</a></td>
+                <td><a    class=" btn btn-primary btn-danger" href="/Home/Delete/@list.ID">Delete</a></td>
+
+            </tr>
+        }
+      
+    </tbody>
+</table>
+<div class="conn">
+
+</div>

@@ -1,0 +1,51 @@
+﻿@model Blog.Models.EntityFrameWork.ToDoList
+
+@{
+    ViewBag.Title = "AddNew";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<link href="~/Content/css/style1.css" rel="stylesheet" />
+
+
+@using (Html.BeginForm("AddNew", "Home", FormMethod.Post))
+{
+    <div class="header">
+
+    </div>
+    <div class="w3-main">
+
+        <div class="about-bottom main-agile book-form">
+            <div class="alert-close"> </div>
+            
+            <form action="/Home/AddNew" method="post">
+                <div class="form-date-w3-agileits zz">
+                    @Html.LabelFor(m => m.MONTH)
+                    @Html.TextBoxFor(m => m.MONTH)
+                    @Html.LabelFor(m => m.DAY)
+                    @Html.TextBoxFor(m => m.DAY)
+                    @Html.LabelFor(m => m.AFTER_WAKE_UP)
+                    @Html.TextBoxFor(m => m.AFTER_WAKE_UP)
+                    @Html.LabelFor(m => m.AT_UNIVERSITY)
+                    @Html.TextBoxFor(m => m.AT_UNIVERSITY)
+                    @Html.LabelFor(m => m.AFTER_LESSON_END)
+                    @Html.TextBoxFor(m => m.AFTER_LESSON_END)
+                    @Html.LabelFor(m => m.AT_NIGHT)
+                    @Html.TextBoxFor(m => m.AT_NIGHT)
+                    @Html.LabelFor(m => m.NOT_IN_PLAN)
+                    @Html.TextBoxFor(m => m.NOT_IN_PLAN)
+
+                  
+                </div>
+                <div class="make wow shake">
+                    @Html.HiddenFor(m => m.ID)
+                    <input class="btn btn-warning zz" type="submit" value=" Save">
+                </div>
+            </form>
+        </div>
+
+    </div>
+}
+
